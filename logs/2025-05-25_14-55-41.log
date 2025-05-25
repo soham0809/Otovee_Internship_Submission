@@ -1,0 +1,6 @@
+[2025-05-25 14:55:41,272] WARNING -  * Debugger is active!
+[2025-05-25 14:55:41,276] INFO -  * Debugger PIN: 620-394-713
+[2025-05-25 14:55:58,717] INFO - 127.0.0.1 - - [25/May/2025 14:55:58] "GET / HTTP/1.1" 200 -
+[2025-05-25 14:55:58,947] INFO - 127.0.0.1 - - [25/May/2025 14:55:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-05-25 14:56:23,731] INFO - \u2705 Model and preprocessor loaded successfully
+[2025-05-25 14:56:23,736] INFO - 127.0.0.1 - - [25/May/2025 14:56:23] "POST /predict HTTP/1.1" 200 -

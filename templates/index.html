@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PCOS Predictor</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #c9d6ff, #e2e2e2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      form {
+        background: #ffffff;
+        padding: 30px 40px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15),
+          -10px -10px 20px rgba(255, 255, 255, 0.8);
+        transition: all 0.3s ease-in-out;
+        transform: perspective(1000px) rotateX(2deg) rotateY(1deg);
+      }
+
+      form:hover {
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+        box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.2),
+          -5px -5px 15px rgba(255, 255, 255, 0.9);
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      label {
+        font-weight: 500;
+        display: block;
+        margin-top: 15px;
+        color: #333;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: none;
+        border-radius: 10px;
+        background: #f0f0f3;
+        box-shadow: inset 3px 3px 6px #d1d9e6, inset -3px -3px 6px #ffffff;
+        font-size: 1em;
+        outline: none;
+        transition: 0.2s ease;
+      }
+
+      input[type="number"]:focus {
+        box-shadow: inset 2px 2px 5px #babecc, inset -2px -2px 5px #ffffff;
+      }
+
+      input[type="submit"] {
+        margin-top: 25px;
+        width: 100%;
+        padding: 12px;
+        background: #6a11cb;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1em;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+        transition: 0.3s ease-in-out;
+      }
+
+      input[type="submit"]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
+      }
+
+      h3 {
+        margin-top: 20px;
+        text-align: center;
+        color: #444;
+        background: #f3f3f3;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1),
+          -4px -4px 10px rgba(255, 255, 255, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/predict" method="post">
+      <h2>Enter PCOS Indicators</h2>
+
+      <label>I_beta-HCG (mIU/mL):</label>
+      <input type="number" step="any" name="I_beta-HCG(mIU/mL)" required />
+
+      <label>II_beta-HCG (mIU/mL):</label>
+      <input type="number" step="any" name="II_beta-HCG(mIU/mL)" required />
+
+      <label>AMH (ng/mL):</label>
+      <input type="number" step="any" name="AMH(ng/mL)" required />
+
+      <input type="submit" value="Predict" />
+
+      {% if prediction_text %}
+      <h3>{{ prediction_text }}</h3>
+      {% endif %}
+    </form>
+  </body>
+</html>
