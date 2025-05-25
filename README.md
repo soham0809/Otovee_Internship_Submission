@@ -15,3 +15,8 @@ This project predicts the presence of Polycystic Ovary Syndrome (PCOS) based on 
 pip install -r requirements.txt
 python app.py
 ```
+
+## NOTE
+
+The current Model is not accurate reason being data set was imbalanced I tried using techniques like SMOTE but Still didnt got much accuracy ,
+Current Accuracy ~70% [Is already logged ]
