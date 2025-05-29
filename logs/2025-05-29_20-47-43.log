@@ -1,0 +1,135 @@
+[2025-05-29 20:47:44,573] INFO - Starting data ingestion
+[2025-05-29 20:47:44,573] INFO - \u25b6 Starting data ingestion
+[2025-05-29 20:47:44,580] INFO - \u2705 Loaded dataset with 541 rows and 4 columns
+[2025-05-29 20:47:44,580] INFO - Validating data quality
+[2025-05-29 20:47:44,580] WARNING - Found 34 duplicate rows
+[2025-05-29 20:47:44,580] WARNING - Column AMH(ng/mL) contains non-numeric values: ['a']
+[2025-05-29 20:47:44,580] INFO - Class 0: 364 samples (67.28%)
+[2025-05-29 20:47:44,580] INFO - Class 1: 177 samples (32.72%)
+[2025-05-29 20:47:44,580] WARNING - Class imbalance detected with ratio 2.06
+[2025-05-29 20:47:44,580] INFO - \u2705 Converted I_beta-HCG(mIU/mL) to numeric type
+[2025-05-29 20:47:44,580] INFO - \u2705 Converted II_beta-HCG(mIU/mL) to numeric type
+[2025-05-29 20:47:44,580] WARNING - Found 1 non-numeric values in AMH(ng/mL): ['a']
+[2025-05-29 20:47:44,580] INFO - \u2705 Converted AMH(ng/mL) to numeric type
+[2025-05-29 20:47:44,580] INFO - Found 1 missing values before cleaning
+[2025-05-29 20:47:44,588] INFO - \u2705 Removed rows with missing values. Remaining rows: 540
+[2025-05-29 20:47:44,741] INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[2025-05-29 20:47:44,741] INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[2025-05-29 20:47:45,341] INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[2025-05-29 20:47:45,341] INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[2025-05-29 20:47:46,305] INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[2025-05-29 20:47:46,306] INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[2025-05-29 20:47:46,658] INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[2025-05-29 20:47:46,663] INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[2025-05-29 20:47:46,954] INFO - \u2705 Data visualizations saved to artifacts\data_profile
+[2025-05-29 20:47:46,957] INFO - \u2705 Raw data saved to artifacts\data.csv
+[2025-05-29 20:47:46,964] INFO - \u2705 Data split using stratified sampling:
+[2025-05-29 20:47:46,964] INFO -    - Training set: 345 samples
+[2025-05-29 20:47:46,964] INFO -    - Validation set: 87 samples
+[2025-05-29 20:47:46,964] INFO -    - Test set: 108 samples
+[2025-05-29 20:47:46,964] INFO - Class distribution in training set: {0: 232, 1: 113}
+[2025-05-29 20:47:46,964] INFO - Class distribution in validation set: {0: 58, 1: 29}
+[2025-05-29 20:47:46,964] INFO - Class distribution in test set: {0: 73, 1: 35}
+[2025-05-29 20:47:46,964] INFO - \u2705 Data ingestion completed successfully
+[2025-05-29 20:47:46,964] INFO - Data ingestion completed. Train path: artifacts\train.csv, Test path: artifacts\test.csv
+[2025-05-29 20:47:46,964] INFO - Starting data transformation
+[2025-05-29 20:47:46,971] INFO - \u2705 Loaded train and test datasets for transformation
+[2025-05-29 20:47:46,971] INFO - Train dataset shape: (345, 4), Test dataset shape: (108, 4)
+[2025-05-29 20:47:46,972] INFO - Detected 23 outliers in column I_beta-HCG(mIU/mL)
+[2025-05-29 20:47:46,973] INFO - Detected 62 outliers in column II_beta-HCG(mIU/mL)
+[2025-05-29 20:47:46,974] INFO - Detected 26 outliers in column AMH(ng/mL)
+[2025-05-29 20:47:46,974] INFO - Detected outliers: {'I_beta-HCG(mIU/mL)': 23, 'II_beta-HCG(mIU/mL)': 62, 'AMH(ng/mL)': 26}
+[2025-05-29 20:47:46,976] INFO - Winsorized outliers in column I_beta-HCG(mIU/mL)
+[2025-05-29 20:47:46,977] INFO - Winsorized outliers in column II_beta-HCG(mIU/mL)
+[2025-05-29 20:47:46,978] INFO - Winsorized outliers in column AMH(ng/mL)
+[2025-05-29 20:47:46,979] INFO - \u2705 Added HCG ratio feature
+[2025-05-29 20:47:46,979] INFO - \u2705 Added log transform for I_beta-HCG(mIU/mL)
+[2025-05-29 20:47:46,979] INFO - \u2705 Added log transform for II_beta-HCG(mIU/mL)
+[2025-05-29 20:47:46,980] INFO - \u2705 Added log transform for AMH(ng/mL)
+[2025-05-29 20:47:46,980] INFO - \u2705 Added HCG ratio feature
+[2025-05-29 20:47:46,980] INFO - \u2705 Added log transform for I_beta-HCG(mIU/mL)
+[2025-05-29 20:47:46,981] INFO - \u2705 Added log transform for II_beta-HCG(mIU/mL)
+[2025-05-29 20:47:46,981] INFO - \u2705 Added log transform for AMH(ng/mL)
+[2025-05-29 20:47:46,981] INFO - \u2705 Added engineered features to datasets
+[2025-05-29 20:47:46,982] INFO - \u2705 Created preprocessing pipeline with specialized transformers
+[2025-05-29 20:47:46,999] INFO - Applying SMOTE-Tomek for handling class imbalance
+[2025-05-29 20:47:47,000] INFO - Class distribution before resampling: PCOS
+0    232
+1    113
+Name: count, dtype: int64
+[2025-05-29 20:47:47,004] INFO - Class distribution after resampling: PCOS
+0    194
+1    194
+Name: count, dtype: int64
+[2025-05-29 20:47:47,008] INFO - \u2705 Object saved at: artifacts\preprocessor.pkl
+[2025-05-29 20:47:47,008] INFO - \u2705 Preprocessor saved to artifacts\preprocessor.pkl
+[2025-05-29 20:47:47,008] INFO - Data transformation completed. Preprocessor saved at: artifacts\preprocessor.pkl
+[2025-05-29 20:47:47,008] INFO - Starting model training
+[2025-05-29 20:47:47,008] INFO - Starting model training process
+[2025-05-29 20:47:47,008] INFO - X_train shape: (388, 7), X_test shape: (108, 7)
+[2025-05-29 20:47:47,009] INFO - y_train distribution: PCOS
+0    194
+1    194
+Name: count, dtype: int64
+[2025-05-29 20:47:47,009] INFO - Evaluating base models with cross-validation
+[2025-05-29 20:47:47,134] INFO - CV Results for Logistic Regression: Accuracy=0.6546, F1=0.6126, ROC AUC=0.7214
+[2025-05-29 20:47:48,971] INFO - CV Results for Random Forest: Accuracy=0.7088, F1=0.7148, ROC AUC=0.7907
+[2025-05-29 20:47:49,664] INFO - CV Results for XGBoost: Accuracy=0.7087, F1=0.7247, ROC AUC=0.7876
+[2025-05-29 20:47:50,062] INFO - CV Results for LightGBM: Accuracy=0.7061, F1=0.7166, ROC AUC=0.8033
+[2025-05-29 20:47:50,317] INFO - CV Results for SVC: Accuracy=0.6752, F1=0.6431, ROC AUC=0.7303
+[2025-05-29 20:47:50,317] INFO - Creating ensemble models
+[2025-05-29 20:47:50,317] INFO - Evaluating ensemble models with cross-validation
+[2025-05-29 20:47:53,707] INFO - CV Results for Voting Ensemble: Accuracy=0.7216, F1=0.7298, ROC AUC=0.7992
+[2025-05-29 20:48:12,199] INFO - CV Results for Stacking Ensemble: Accuracy=0.7319, F1=0.7349, ROC AUC=0.8041
+[2025-05-29 20:48:12,199] INFO - Training best model: Stacking Ensemble
+[2025-05-29 20:48:13,601] INFO - \u2705 Best Model: Stacking Ensemble
+[2025-05-29 20:48:13,601] INFO - \u2705 Accuracy: 0.6574
+[2025-05-29 20:48:13,601] INFO - \u2705 F1 Score: 0.5195
+[2025-05-29 20:48:13,601] INFO - \u2705 Precision: 0.4762
+[2025-05-29 20:48:13,601] INFO - \u2705 Recall: 0.5714
+[2025-05-29 20:48:13,601] INFO - \u2705 Matthews Correlation Coefficient: 0.2593
+[2025-05-29 20:48:13,601] INFO - \u2705 ROC AUC: 0.6564
+[2025-05-29 20:48:13,601] INFO - 
+              precision    recall  f1-score   support
+
+           0       0.77      0.70      0.73        73
+           1       0.48      0.57      0.52        35
+
+    accuracy                           0.66       108
+   macro avg       0.62      0.64      0.63       108
+weighted avg       0.68      0.66      0.66       108
+
+[2025-05-29 20:48:13,807] INFO - Confusion matrix saved to artifacts\confusion_matrix.png
+[2025-05-29 20:48:13,816] ERROR - Error generating SHAP explanations: The passed model is not callable and cannot be analyzed directly with the given masker! Model: StackingClassifier(cv=5,
+                   estimators=[('Logistic Regression',
+                                LogisticRegression(class_weight='balanced',
+                                                   max_iter=1000)),
+                               ('Random Forest',
+                                RandomForestClassifier(class_weight='balanced',
+                                                       random_state=42)),
+                               ('XGBoost',
+                                XGBClassifier(base_score=None, booster=None,
+                                              callbacks=None,
+                                              colsample_bylevel=None,
+                                              colsample_bynode=None,
+                                              colsample_bytree=None,
+                                              device=None,
+                                              earl...
+                                              max_depth=None, max_leaves=None,
+                                              min_child_weight=None,
+                                              missing=nan,
+                                              monotone_constraints=None,
+                                              multi_strategy=None,
+                                              n_estimators=None, n_jobs=None,
+                                              num_parallel_tree=None,
+                                              random_state=42, ...)),
+                               ('LightGBM',
+                                LGBMClassifier(class_weight='balanced',
+                                               random_state=42)),
+                               ('SVC',
+                                SVC(class_weight='balanced', probability=True,
+                                    random_state=42))],
+                   final_estimator=LogisticRegression(max_iter=1000))
+[2025-05-29 20:48:13,858] INFO - \u2705 Object saved at: artifacts\model.pkl
+[2025-05-29 20:48:13,858] INFO - \U0001f4e6 Best model saved to artifacts\model.pkl
+[2025-05-29 20:48:13,859] INFO - \U0001f4ca Model evaluation results saved to artifacts\model_evaluation.json

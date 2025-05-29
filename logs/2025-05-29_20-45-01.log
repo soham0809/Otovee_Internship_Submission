@@ -1,0 +1,5 @@
+[2025-05-29 20:45:04,314] INFO - \u25b6 Starting data ingestion
+[2025-05-29 20:45:04,342] INFO - \u2705 Loaded dataset with 541 rows and 4 columns
+[2025-05-29 20:45:04,344] INFO - Validating data quality
+[2025-05-29 20:45:04,360] WARNING - Found 34 duplicate rows
+[2025-05-29 20:45:04,360] ERROR - Error in data ingestion: could not convert string to float: 'a'

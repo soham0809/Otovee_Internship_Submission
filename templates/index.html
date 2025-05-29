@@ -3,19 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PCOS Predictor</title>
+    <title>PCOS Predictor - Advanced ML Model</title>
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background: linear-gradient(135deg, #c9d6ff, #e2e2e2);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
         margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
-      form {
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      .card {
         background: #ffffff;
         padding: 30px 40px;
         border-radius: 20px;
@@ -23,12 +33,32 @@
           -10px -10px 20px rgba(255, 255, 255, 0.8);
         transition: all 0.3s ease-in-out;
         transform: perspective(1000px) rotateX(2deg) rotateY(1deg);
+        flex: 1;
+        min-width: 300px;
+        max-width: 500px;
       }
 
-      form:hover {
+      .card:hover {
         transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
         box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.2),
           -5px -5px 15px rgba(255, 255, 255, 0.9);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        color: #333;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      .header p {
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto;
       }
 
       h2 {
@@ -62,7 +92,7 @@
         box-shadow: inset 2px 2px 5px #babecc, inset -2px -2px 5px #ffffff;
       }
 
-      input[type="submit"] {
+      button, input[type="submit"] {
         margin-top: 25px;
         width: 100%;
         padding: 12px;
@@ -77,41 +107,205 @@
         transition: 0.3s ease-in-out;
       }
 
-      input[type="submit"]:hover {
+      button:hover, input[type="submit"]:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
       }
 
-      h3 {
-        margin-top: 20px;
+      .result-card {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
+        margin-top: 30px;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .result-header {
         text-align: center;
-        color: #444;
-        background: #f3f3f3;
+        margin-bottom: 20px;
+      }
+
+      .result-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .result-details {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .result-visualization {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .prediction {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        margin: 20px 0;
         padding: 15px;
         border-radius: 12px;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1),
-          -4px -4px 10px rgba(255, 255, 255, 0.8);
+      }
+
+      .prediction.positive {
+        background-color: #ffebee;
+        color: #c62828;
+      }
+
+      .prediction.negative {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+      }
+
+      .confidence {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.2em;
+      }
+
+      .explanation-img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .input-summary {
+        background: #f5f5f5;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .input-summary h4 {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .input-summary p {
+        margin: 5px 0;
+      }
+
+      .error {
+        background-color: #ffebee;
+        color: #c62828;
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: #6a11cb;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      .nav-link:hover {
+        color: #2575fc;
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .card {
+          width: 90%;
+          max-width: none;
+        }
       }
     </style>
   </head>
   <body>
-    <form action="/predict" method="post">
-      <h2>Enter PCOS Indicators</h2>
+    <div class="header">
+      <h1>PCOS Prediction System</h1>
+      <p>Advanced machine learning model for predicting Polycystic Ovary Syndrome based on hormonal biomarkers</p>
+    </div>
 
-      <label>I_beta-HCG (mIU/mL):</label>
-      <input type="number" step="any" name="I_beta-HCG(mIU/mL)" required />
+    <div class="container">
+      <div class="card">
+        <h2>Enter Hormonal Biomarkers</h2>
+        <form action="/predict" method="post">
+          <label>I_beta-HCG (mIU/mL):</label>
+          <input type="number" step="any" name="I_beta-HCG(mIU/mL)" required value="{{ input_data['I_beta-HCG(mIU/mL)']|default('') }}" />
 
-      <label>II_beta-HCG (mIU/mL):</label>
-      <input type="number" step="any" name="II_beta-HCG(mIU/mL)" required />
+          <label>II_beta-HCG (mIU/mL):</label>
+          <input type="number" step="any" name="II_beta-HCG(mIU/mL)" required value="{{ input_data['II_beta-HCG(mIU/mL)']|default('') }}" />
 
-      <label>AMH (ng/mL):</label>
-      <input type="number" step="any" name="AMH(ng/mL)" required />
+          <label>AMH (ng/mL):</label>
+          <input type="number" step="any" name="AMH(ng/mL)" required value="{{ input_data['AMH(ng/mL)']|default('') }}" />
 
-      <input type="submit" value="Predict" />
+          <input type="submit" value="Generate Prediction" />
+        </form>
 
-      {% if prediction_text %}
-      <h3>{{ prediction_text }}</h3>
+        <div class="nav-links">
+          <a href="/model-info" class="nav-link">View Model Performance</a>
+          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3737989/" target="_blank" class="nav-link">Learn About PCOS</a>
+        </div>
+      </div>
+
+      {% if prediction is defined or error %}
+      <div class="card">
+        <h2>Prediction Results</h2>
+        
+        {% if error %}
+        <div class="error">
+          {{ error }}
+        </div>
+        {% elif prediction is defined %}
+        <div class="input-summary">
+          <h4>Input Summary:</h4>
+          <p>I_beta-HCG: {{ input_data['I_beta-HCG(mIU/mL)'] }} mIU/mL</p>
+          <p>II_beta-HCG: {{ input_data['II_beta-HCG(mIU/mL)'] }} mIU/mL</p>
+          <p>AMH: {{ input_data['AMH(ng/mL)'] }} ng/mL</p>
+        </div>
+
+        <div class="prediction {% if prediction == 1 %}positive{% else %}negative{% endif %}">
+          {{ prediction_text }}
+        </div>
+
+        <div class="confidence">
+          Confidence: {{ confidence }}
+        </div>
+
+        {% if explanation_filename %}
+        <div class="result-visualization">
+          <h3>Feature Importance</h3>
+          <p>This visualization shows how each biomarker influenced the prediction:</p>
+          <img src="/explanations/{{ explanation_filename }}" alt="SHAP Explanation" class="explanation-img" />
+        </div>
+        {% endif %}
+
+        <div class="result-details">
+          <h3>What This Means</h3>
+          {% if prediction == 1 %}
+          <p>The model indicates a likelihood of PCOS based on the provided hormonal markers. This is not a diagnosis - please consult with a healthcare provider for proper evaluation.</p>
+          {% else %}
+          <p>The model indicates a lower likelihood of PCOS based on the provided hormonal markers. However, this is not a definitive result - please consult with a healthcare provider if you have symptoms.</p>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
       {% endif %}
-    </form>
+    </div>
   </body>
 </html>

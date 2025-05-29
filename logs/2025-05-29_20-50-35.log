@@ -1,0 +1,120 @@
+[2025-05-29 20:50:35,404] WARNING -  * Debugger is active!
+[2025-05-29 20:50:35,408] INFO -  * Debugger PIN: 129-609-986
+[2025-05-29 20:51:12,268] INFO - 127.0.0.1 - - [29/May/2025 20:51:12] "GET / HTTP/1.1" 200 -
+[2025-05-29 20:51:12,509] INFO - 127.0.0.1 - - [29/May/2025 20:51:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-05-29 20:51:39,131] INFO - Received prediction request with input: {'I_beta-HCG(mIU/mL)': 1.99, 'II_beta-HCG(mIU/mL)': 1.99, 'AMH(ng/mL)': 2.07}
+[2025-05-29 20:51:39,133] INFO - \u2705 Input data validated
+[2025-05-29 20:51:39,304] INFO - \u2705 Model and preprocessor loaded successfully
+[2025-05-29 20:51:39,306] INFO - \u2705 Engineered features added
+[2025-05-29 20:51:39,405] INFO - \u2705 Prediction generated: 0
+[2025-05-29 20:51:39,415] INFO - \u2705 Confidence score: 0.8685
+[2025-05-29 20:51:39,418] WARNING - Failed to generate explanation: The passed model is not callable and cannot be analyzed directly with the given masker! Model: StackingClassifier(cv=5,
+                   estimators=[('Logistic Regression',
+                                LogisticRegression(class_weight='balanced',
+                                                   max_iter=1000)),
+                               ('Random Forest',
+                                RandomForestClassifier(class_weight='balanced',
+                                                       random_state=42)),
+                               ('XGBoost',
+                                XGBClassifier(base_score=None, booster=None,
+                                              callbacks=None,
+                                              colsample_bylevel=None,
+                                              colsample_bynode=None,
+                                              colsample_bytree=None,
+                                              device=None,
+                                              earl...
+                                              max_depth=None, max_leaves=None,
+                                              min_child_weight=None,
+                                              missing=nan,
+                                              monotone_constraints=None,
+                                              multi_strategy=None,
+                                              n_estimators=None, n_jobs=None,
+                                              num_parallel_tree=None,
+                                              random_state=42, ...)),
+                               ('LightGBM',
+                                LGBMClassifier(class_weight='balanced',
+                                               random_state=42)),
+                               ('SVC',
+                                SVC(class_weight='balanced', probability=True,
+                                    random_state=42))],
+                   final_estimator=LogisticRegression(max_iter=1000))
+[2025-05-29 20:51:39,418] INFO - Prediction logged to logs\predictions\prediction_20250529_205139.json
+[2025-05-29 20:51:39,427] INFO - 127.0.0.1 - - [29/May/2025 20:51:39] "POST /predict HTTP/1.1" 200 -
+[2025-05-29 20:52:28,327] INFO - Received prediction request with input: {'I_beta-HCG(mIU/mL)': 494.08, 'II_beta-HCG(mIU/mL)': 494.08, 'AMH(ng/mL)': 6.63}
+[2025-05-29 20:52:28,328] INFO - \u2705 Input data validated
+[2025-05-29 20:52:28,364] INFO - \u2705 Model and preprocessor loaded successfully
+[2025-05-29 20:52:28,366] INFO - \u2705 Engineered features added
+[2025-05-29 20:52:28,381] INFO - \u2705 Prediction generated: 0
+[2025-05-29 20:52:28,393] INFO - \u2705 Confidence score: 0.5099
+[2025-05-29 20:52:28,400] WARNING - Failed to generate explanation: The passed model is not callable and cannot be analyzed directly with the given masker! Model: StackingClassifier(cv=5,
+                   estimators=[('Logistic Regression',
+                                LogisticRegression(class_weight='balanced',
+                                                   max_iter=1000)),
+                               ('Random Forest',
+                                RandomForestClassifier(class_weight='balanced',
+                                                       random_state=42)),
+                               ('XGBoost',
+                                XGBClassifier(base_score=None, booster=None,
+                                              callbacks=None,
+                                              colsample_bylevel=None,
+                                              colsample_bynode=None,
+                                              colsample_bytree=None,
+                                              device=None,
+                                              earl...
+                                              max_depth=None, max_leaves=None,
+                                              min_child_weight=None,
+                                              missing=nan,
+                                              monotone_constraints=None,
+                                              multi_strategy=None,
+                                              n_estimators=None, n_jobs=None,
+                                              num_parallel_tree=None,
+                                              random_state=42, ...)),
+                               ('LightGBM',
+                                LGBMClassifier(class_weight='balanced',
+                                               random_state=42)),
+                               ('SVC',
+                                SVC(class_weight='balanced', probability=True,
+                                    random_state=42))],
+                   final_estimator=LogisticRegression(max_iter=1000))
+[2025-05-29 20:52:28,402] INFO - Prediction logged to logs\predictions\prediction_20250529_205228.json
+[2025-05-29 20:52:28,403] INFO - 127.0.0.1 - - [29/May/2025 20:52:28] "POST /predict HTTP/1.1" 200 -
+[2025-05-29 20:53:07,544] INFO - Received prediction request with input: {'I_beta-HCG(mIU/mL)': 768.0, 'II_beta-HCG(mIU/mL)': 768.0, 'AMH(ng/mL)': 1.56}
+[2025-05-29 20:53:07,545] INFO - \u2705 Input data validated
+[2025-05-29 20:53:07,580] INFO - \u2705 Model and preprocessor loaded successfully
+[2025-05-29 20:53:07,581] INFO - \u2705 Engineered features added
+[2025-05-29 20:53:07,599] INFO - \u2705 Prediction generated: 0
+[2025-05-29 20:53:07,610] INFO - \u2705 Confidence score: 0.8428
+[2025-05-29 20:53:07,617] WARNING - Failed to generate explanation: The passed model is not callable and cannot be analyzed directly with the given masker! Model: StackingClassifier(cv=5,
+                   estimators=[('Logistic Regression',
+                                LogisticRegression(class_weight='balanced',
+                                                   max_iter=1000)),
+                               ('Random Forest',
+                                RandomForestClassifier(class_weight='balanced',
+                                                       random_state=42)),
+                               ('XGBoost',
+                                XGBClassifier(base_score=None, booster=None,
+                                              callbacks=None,
+                                              colsample_bylevel=None,
+                                              colsample_bynode=None,
+                                              colsample_bytree=None,
+                                              device=None,
+                                              earl...
+                                              max_depth=None, max_leaves=None,
+                                              min_child_weight=None,
+                                              missing=nan,
+                                              monotone_constraints=None,
+                                              multi_strategy=None,
+                                              n_estimators=None, n_jobs=None,
+                                              num_parallel_tree=None,
+                                              random_state=42, ...)),
+                               ('LightGBM',
+                                LGBMClassifier(class_weight='balanced',
+                                               random_state=42)),
+                               ('SVC',
+                                SVC(class_weight='balanced', probability=True,
+                                    random_state=42))],
+                   final_estimator=LogisticRegression(max_iter=1000))
+[2025-05-29 20:53:07,619] INFO - Prediction logged to logs\predictions\prediction_20250529_205307.json
+[2025-05-29 20:53:07,620] INFO - 127.0.0.1 - - [29/May/2025 20:53:07] "POST /predict HTTP/1.1" 200 -
+[2025-05-29 20:53:10,954] INFO - 127.0.0.1 - - [29/May/2025 20:53:10] "GET /model-info HTTP/1.1" 200 -
+[2025-05-29 20:53:27,366] INFO - 127.0.0.1 - - [29/May/2025 20:53:27] "GET / HTTP/1.1" 200 -

@@ -1,0 +1,10 @@
+{
+    "timestamp": "2025-05-29T20:52:28.400749",
+    "input": {
+        "I_beta-HCG(mIU/mL)": 494.08,
+        "II_beta-HCG(mIU/mL)": 494.08,
+        "AMH(ng/mL)": 6.63
+    },
+    "prediction": 0,
+    "confidence": 0.5099374059339244
+}

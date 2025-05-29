@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: pcos-ml-project
+Version: 0.0.1
+Author: Soham Joshi
+Author-email: sohamj69@gmail.com
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: flask
+Requires-Dist: joblib
+Requires-Dist: gunicorn
