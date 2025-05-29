@@ -42,7 +42,7 @@ This system analyzes three key hormonal biomarkers (I_beta-HCG, II_beta-HCG, and
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/soham0809/PCOS_Data_Pipeline
 cd NEW_MAIN
 
 # Install dependencies
